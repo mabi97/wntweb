@@ -4,8 +4,14 @@ import dash
 from dash import dcc, html, dash_table, Input, Output
 from flask import Flask
 
-server = Flask(__name__)  # Khởi tạo Flask server
-app = dash.Dash(__name__, server=server)  # Dùng Flask làm backend
+server = Flask(__name__)  
+app = dash.Dash(__name__, server=server)  
+
+
+app.layout = html.Div([
+    html.H1("Loading Data..."),
+])
+
 
 def fetch_data(url):
 
