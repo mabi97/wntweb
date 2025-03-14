@@ -2,6 +2,10 @@ import requests
 import pandas as pd
 import dash
 from dash import dcc, html, dash_table, Input, Output
+from flask import Flask
+
+server = Flask(__name__)  # Khởi tạo Flask server
+app = dash.Dash(__name__, server=server)  # Dùng Flask làm backend
 
 def fetch_data(url):
 
